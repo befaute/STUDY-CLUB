@@ -1,69 +1,35 @@
-Deskripsi
-klasifikasimhs.csv adalah dataset berbentuk CSV yang berisi data
-kondisi tempat tinggal dan sosial-ekonomi orang tua, serta label
-kelayakan keringanan Uang Kuliah Tunggal (UKT). Dataset ini dapat
-digunakan sebagai bahan latihan eksplorasi data, prapemrosesan data, dan
-klasifikasi sederhana.
-Catatan: Dataset ini tidak menjelaskan sumber data, periode
-pengumpulan, maupun definisi resmi kode kategori. Jangan gunakan data
-ini untuk mengambil keputusan nyata tentang kelayakan bantuan sebelum
-asal-usul dan aturan labelnya diverifikasi.
+Data Understanding — Klasifikasi Kelayakan Keringanan UKT
 
-Isi dataset
-Dataset berisi 100 baris data dan 6 kolom.
-  Kolom                           Deskripsi               Tipe data yang
-                                                          disarankan
-  Tempat Tinggal                Kode kategori tempat    Kategorikal/biner
-                                  tinggal; arti kode 0
-                                  dan 1 belum
-                                  dijelaskan dalam file   
+1. Deskripsi Dataset
+Dataset klasifikasimhs.csv merupakan dataset yang digunakan untuk mempelajari klasifikasi kelayakan keringanan Uang Kuliah Tunggal (UKT) mahasiswa berdasarkan beberapa atribut sosial dan ekonomi keluarga.
+Dataset ini memiliki 100 baris dan 6 kolom.
 
-  Pekerjaan Orang Tua           Jenis pekerjaan orang   Kategorikal
-                                  tua                     
+2. Atribut Dataset
+Atribut yang terdapat dalam dataset meliputi:
+Tempat Tinggal
+Pekerjaan Orang Tua
+Penghasilan Orang Tua
+Jumlah Tanggungan Orang Tua
+Kendaraan
+Kelayakan Keringanan UKT
+Kolom Kelayakan Keringanan UKT merupakan atribut target yang akan diperiksa untuk keperluan klasifikasi.
 
-  Penghasilan Orang Tua         Penghasilan orang tua   Numerik
-                                  dalam angka;
-                                  satuan/periode tidak
-                                  dicantumkan secara
-                                  eksplisit               
+3. Sumber Dataset
+Nama file: klasifikasimhs.csv
+Sumber: https://www.kaggle.com/datasets/rina77/data-klasifikasi-ukt-mahasiswa
+Lisensi: Belum diketahui dan perlu dikonfirmasi dari sumber asli dataset.
 
-  Jumlah Tanggungan Orang Tua   Jumlah tanggungan orang Bilangan bulat
-                                  tua                     
+4. Pemeriksaan Awal Dataset
+Tahap pemeriksaan awal meliputi:
+Memeriksa jumlah baris dan kolom.
+Memeriksa nama kolom dan tipe data.
+Memeriksa jumlah data kosong.
+Menampilkan beberapa baris pertama.
+Memeriksa data duplikat.
+Memeriksa variasi nilai pada atribut target.
 
-  Kendaraan                     Kode jumlah/kategori    Kategorikal atau
-                                  kendaraan; arti kode    bilangan bulat, setelah
-                                  0, 1, dan 2 belum definisi dikonfirmasi
-                                  dijelaskan dalam file   
+5. Temuan Awal
+Pemeriksaan awal menunjukkan bahwa dataset memiliki 100 baris dan 6 kolom. Terdapat baris duplikat yang perlu ditinjau lebih lanjut. Konsistensi nilai pada atribut target juga perlu diperiksa sebelum tahap Data Preparation.
 
-  Kelayakan Keringanan UKT      Label target kelayakan; Kategorikal/biner
-                                  arti 0 dan 1 perlu  setelah dibersihkan
-                                  dikonfirmasi dari
-                              pembuat dataset         
-Persiapan penggunaan
-1. Simpan klasifikasimhs.csv di folder proyek.
-2. Baca file menggunakan aplikasi spreadsheet atau pustaka Python
-   seperti pandas.
-3. Periksa nilai kategori dan tipe data sebelum analisis.
-4. Bersihkan anomali data yang tercatat pada DATASHEET.md.
-5. Pastikan definisi setiap kode kategori dan label telah dikonfirmasi
-   sebelum melatih model.
-Contoh membaca file dengan Python:
-import pandas as pd
-
-data = pd.read_csv("klasifikasimhs.csv")
-print(data.head())
-print(data.info())
-print(data.isna().sum())
-Struktur berkas
-project/
-├── klasifikasimhs.csv
-├── README.md
-└── DATASHEET.md
-Batasan
-- Tidak ada keterangan sumber, lisensi, tanggal pengumpulan, atau
-  metode pengumpulan data.
-- Arti kode kategori belum dijelaskan.
-- Dataset memiliki anomali yang perlu diperiksa sebelum analisis atau
-  pemodelan.
-- Dataset sebaiknya dianggap sebagai data latihan sampai validitas dan
-  izin penggunaannya dikonfirmasi.
+6. Tujuan
+Tahap Data Understanding bertujuan untuk memahami struktur, karakteristik, dan kualitas dataset sebelum dilakukan tahap Data Preparation dan pemodelan klasifikasi.
